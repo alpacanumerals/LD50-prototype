@@ -6,46 +6,64 @@
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1240.0
+margin_bottom = 680.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 1024.0
+margin_right = 1240.0
 margin_bottom = 67.0
 custom_fonts/font = ExtResource( 2 )
 text = "LD50"
 align = 1
 valign = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 margin_top = 71.0
-margin_right = 1024.0
-margin_bottom = 91.0
+margin_right = 1240.0
+margin_bottom = 656.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 660.0
+margin_right = 1240.0
+margin_bottom = 680.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 95.0
-margin_right = 1024.0
-margin_bottom = 115.0
+[node name="OptionsButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 108.0
+margin_bottom = 20.0
 text = "Options"
 
-[node name="VolumeUp" type="Button" parent="VBoxContainer"]
-margin_top = 119.0
-margin_right = 1024.0
-margin_bottom = 139.0
+[node name="VolumeUp" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 112.0
+margin_right = 185.0
+margin_bottom = 20.0
 text = "Volume +"
 
-[node name="VolumeDown" type="Button" parent="VBoxContainer"]
-margin_top = 143.0
-margin_right = 1024.0
-margin_bottom = 163.0
+[node name="VolumeDown" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 189.0
+margin_right = 259.0
+margin_bottom = 20.0
 text = "Volume -"
 
-[connection signal="pressed" from="VBoxContainer/VolumeUp" to="." method="_on_VolumeUp_pressed"]
-[connection signal="pressed" from="VBoxContainer/VolumeDown" to="." method="_on_VolumeDown_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VolumeUp" to="." method="_on_VolumeUp_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VolumeDown" to="." method="_on_VolumeDown_pressed"]
