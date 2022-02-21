@@ -35,5 +35,4 @@ func master_volume_down():
     print (volume)
     AudioServer.set_bus_volume_db(
         AudioServer.get_bus_index("Master"), volume)
-    print('v_down')
     pass
